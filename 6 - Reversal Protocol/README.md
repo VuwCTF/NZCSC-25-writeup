@@ -41,10 +41,10 @@ Let's break this down line by line.
 The first line sets the value pointed to by `pcVar4` to the value pointed to by `pcVar3`.
 The second line sets a boolean variable to true if `pcVar3` reaches the start of `local_48`, the char array we copied the string literal to.
 The third line decrements `pcVar3` by one byte, and the fourth line increments `pcVar4` by one byte.
-So this will run for each character in `local_48`, copying the last character of the original array as the first character in the array we compare to. As the pointers change, we effectively reverse `local_48` and store it in `local_28`.
+So this will run for each character in `local_48`, copying the last character of the original array to the first character in the array compared against the user input. As the pointers change, we effectively reverse `local_48` and store it in `local_28`.
 Finally, the loop stops once the pointer in `local_48` reaches the start, and we perform the check outlined above. This means the password is the string literal provided, but reversed:
 `emesrever`
 Now that we understand the program flow, we can run it. Without a password, it prints `Usage: ./reversal_protocol <password>` as predicted. With the discerned password:
-> image of running correct script
+![[solve.png]]
 
 Of course, you could skip all of that by guessing that `reverseme` had to be reversed, but where would be the fun in that?

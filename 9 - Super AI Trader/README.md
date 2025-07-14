@@ -4,6 +4,7 @@
   [[pwn.c | View Source Code Here]]
   
 *Unfortunately due to the nature of this challenge we are unable to archive it.*
+
 Connecting to the app gives us:
 ```
 Welcome back to the trading app!

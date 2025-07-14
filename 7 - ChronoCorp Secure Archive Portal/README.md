@@ -9,4 +9,5 @@ This has several more links that do not exist, and an 'admin override doc ID' of
 ```
 Adding this request using the Network tab in the browser's developer tools gives us the flag:
 ![[7 - ChronoCorp Secure Archive Portal/flag.png]]
+
 *Due to the special header required, we are unable to archive this page.*

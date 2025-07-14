@@ -3,6 +3,7 @@
  Connect over TCP using netcat or a similar program to solve: `nc ctf.nzcsc.org.nz 40025`
 
 *Unfortunately due to the nature of this challenge we are unable to archive it.*
+
 Connecting to the server gives us the following task:
 ```
 Welcome to the Oracle of Odds and Evens - The Deceptive Edition! (512-bit Variant)
@@ -47,6 +48,7 @@ Using odd numbers of trials is convenient as it allows for a clear majority in e
 | 9   | 5   | 0.9991      |
 | 11  | 6   | 0.9997      |
 | 13  | 7   | 0.9999      |
+
 Using 13 trials meets this level of accuracy. (although this is definitely higher than required)
 
 We can now construct a script to calculate the bounds, such as the one in [[solve.py]].
