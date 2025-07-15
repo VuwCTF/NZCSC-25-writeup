@@ -36,8 +36,8 @@ RSA uses modular arithmetic to compute a ciphertext. The ciphertext $c$ is compu
 We must then determine the upper bound of a range of values that contain the plaintext.
 Using even multiples of $m$ calculated via $c (2^e \text{ mod }n) \text{ mod } n$ we can determine whether $2m>n$, as if $2m>n$, because $2m$ is even and $n$ is odd, $2m \text{ mod } n$ will be odd. If $2m < n$, the modulus operation will not impact the value and $2m \text{ mod } n$ will be even. We can therefore create a range that shrinks for each iteration, and perform a binary search. As $\log_2(n) \approx 510.5$ we will need to perform 511 queries.
 
-This oracle is unique in that it sometimes lies. We can get around this by simple probability. If the oracle tells the truth 90% of the time, and we want our script to get all 511 parity checks correct almost always. (it takes several minutes to run, so running it multiple times would be extra slow) Let's say we want 90% success rate. This means that $P(\text{correct parity})^{511} = 0.90$.
-$P(\text{correct parity}) = \sqrt[511]{0.90} = 0.9998$
+This oracle is unique in that it sometimes lies. We can get around this by simple probability. If the oracle tells the truth 90% of the time, and we want our script to get all 511 parity checks correct almost always. (it takes several minutes to run, so running it multiple times would be extra slow) Let's say we want 90% success rate. This means that $P(\text{correct parity})^{511} = 0.90$, and $P(\text{correct parity}) = \sqrt[511]{0.90} = 0.9998$.
+
 We can use the binomial distribution to model this with $p=0.9$. We must now test different numbers of trials, and find the probability that over half of them are correct.
 Using odd numbers of trials is convenient as it allows for a clear majority in either odd or even parity.
 

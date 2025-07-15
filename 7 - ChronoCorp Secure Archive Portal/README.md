@@ -8,6 +8,7 @@ This has several more links that do not exist, and an 'admin override doc ID' of
 **Error:** Access Denied: Retrieval of document ID 'CV_MASTER_RESET_SEQ_001' requires specific authorization. Expected HTTP header 'X-Chrono-Auth: Override_Approved_Level9'.
 ```
 Adding this request using the Network tab in the browser's developer tools gives us the flag:
+
 ![A screenshot of the successful request with the flag printed in the middle](flag.png)
 
 *Due to the special header required, we are unable to archive this page.*
