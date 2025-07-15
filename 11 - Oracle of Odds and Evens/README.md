@@ -54,4 +54,4 @@ Using 13 trials meets this level of accuracy. (although this is definitely highe
 We can now construct a script to calculate the bounds, such as the one in [[solve.py]].
 This (after roughly 5 minutes) gives us the flag: `FLAG[FE927CB38D65A47E]`
 
-![[11 - Oracle of Odds and Evens/flag.png]]
+![A screenshot of the app successfully running, and giving the flag.](flag.png)

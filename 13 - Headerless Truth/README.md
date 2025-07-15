@@ -12,4 +12,4 @@ Investigating further, we open the file in a hex editor:
 
 We are missing the first four bytes of the [PNG file structure](https://en.wikipedia.org/wiki/PNG#File_format). Adding `0x89504E47` fixes the issue and allows us to view the image:
 
-![[Secret-fixed.png]]
+![The fixed image, reading 'TOP SECRET FLAG AF12BC09E438D7FE](Secret-fixed.png)

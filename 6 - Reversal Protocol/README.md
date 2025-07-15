@@ -3,7 +3,7 @@
 
 Using everyone's favourite disassembler Ghidra we can inspect the code.
 The main function (auto labelled as `FUN_001010c0`) contains this disassembled code: 
-![[main.png]]
+![A screenshot of the disassembled main function](main.png)
 As `param_2`has an array-like type, and `param_1`is seemingly checked for the size of this array, we can predict that this corresponds to the standard `argc` and `argv` parameters in a C `main`function.
 The first element in the `argv`array is the name of the executable (`reversal_protocol`), and from the error message printed in the `else` statement we can see that the second element is expected to be a password. This password is checked via `FUN_001012a0` (henceforth `check_password`.) It will return a boolean value - true/1 if the password is correct, false/0 if the password is incorrect.
 We can inspect `check_password` to see how the correct password is generated.
@@ -45,6 +45,6 @@ So this will run for each character in `local_48`, copying the last character of
 Finally, the loop stops once the pointer in `local_48` reaches the start, and we perform the check outlined above. This means the password is the string literal provided, but reversed:
 `emesrever`
 Now that we understand the program flow, we can run it. Without a password, it prints `Usage: ./reversal_protocol <password>` as predicted. With the discerned password:
-![[solve.png]]
+![A screenshot of running the program with 'emesrever' as the password](solve.png)
 
 Of course, you could skip all of that by guessing that `reverseme` had to be reversed, but where would be the fun in that?

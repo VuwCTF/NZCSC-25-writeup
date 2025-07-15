@@ -10,7 +10,7 @@ This is a password-protected zip archive containing `CTF.docx`.
 Now that we have found a host that isn't the `127.0.0.1`, we can try the other endpoints specified in the capture. Trying `/page0.html` gives a [seemingly meaningless site](https://wayback-api.archive.org/web/20250714093115/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/page0.html). This is similar to the pages for almost the other numbers, except for [page8.html](https://web.archive.org/web/20250714093233/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/page8.html). In the source of this page is a commented-out `img` tag to [c4126F.jpeg](https://web.archive.org/web/20250714093431/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/c4126F.jpeg).
 
 Checking the metadata of the image with `exiftool` gives us:
-![[exiftool.png]]
+![A screenshot of exiftool being run on the image. The comment field says 'next clue: /secure_data/leak.php?log=YVcwNTAwYncudHh0](exiftool.png)
 
 This endpoint does not exist on the server, but the previous `/secure_data/` request used base 64 encoding for the path. Decoding this again gives `aW0500bw.txt`. Entering this into the AWS site gives [[encoded_list.txt]]. These are also base64 encoded, and decoding this gives [[decoded_list.txt]] which is a wordlist.
 Using `zip2john` to convert `ctf-doc.zip` into a hash, we can feed it into a hash cracker such as hashcat:
@@ -21,7 +21,7 @@ This reveals the password to be `v!PhY.qG2/H8cb9`. Extracting the archive, and t
 Running `file` reveals that it is in fact another zip file. Extracting this gives a standard Word hierarchy of XML files.
 
 Looking through them all, there is a curious string error in `word/_rels/document.xml.rels`:
-![[xml.png]]
+![A screenshot of document.xml.rels with a hexadecimal file path](xml.png)
 
 Entering this on the AWS site gives an [access denied page](https://web.archive.org/web/20250714095432/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/6a992d5529f459a44fee58c733255e86.html). Once again in the comments there is finally the PowerShell script alluded to in the challenge description:
 ```ps

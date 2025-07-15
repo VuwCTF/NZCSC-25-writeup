@@ -6,7 +6,7 @@ Connect over TCP using netcat or a similar program to solve: `nc ctf.nzcsc.org.n
 Decompiling this binary in Ghidra we can see there are a lot of `printf` and `puts` calls. 
 There is a hardcoded ciphertext decrypted using a function called `xor_decrypt`, and another decrypted using `custom_decode`, and also a `printf` statement which claims to print the flag using the value `__s2`.
 This variable is set by function called `build_string`.
-![[build_string.png]]
+![A screenshot of the disassembled build_string function, setting individual array elements to specific hex values.](build_string.png)
 *build_string()*
 
 This function simply builds an char array consisting of the flag. Decoding this hex gives us the flag: `FLAG[23C26B6Z3A99MC5E]`.
@@ -14,7 +14,7 @@ This function simply builds an char array consisting of the flag. Decoding this 
 *This easter egg was only on the server so we were unable to archive it.*
 
 This challenge has a lot of red herrings. We can see that the 'treasure' can be found by entering the flag itself, setting `iVar1` to true. This has the following result:
-![[treasure.png]]
+![Entering the flag found earlier into the application prints 'Bonus message: You did great This was a chall'](treasure.png)
 which is certainly interesting.
 
 The 'encoded message' is simply ROT13 encoded giving `FLAG[notHerEFlag]`

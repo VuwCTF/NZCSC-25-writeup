@@ -6,9 +6,10 @@ This packet capture contains a variety of different network protocols - TCP, UDP
 Filtering to just this protocol (by typing `http` in the filter bar at the top) shows ~50 requests to either `/track`, `/form`, and one request to `/submit`. 
 Browsers typically transmit information about themselves in the `User-Agent` header, which usually is somewhat sensible (`Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0`, for example, is Firefox v140 on a x64 machine running Win 10.) 
 Looking at the first HTTP request, starting at packet number 6:
-![[request-1.png]]
+
+![A screenshot of an HTTP request, with a garbage user agent and URL path](request-1.png)
 > This view is accessible via right-clicking on the packet in the main view, then Follow -> HTTP Stream, and is very useful for larger transactions.
 
 This is not exactly a flag. We can click through the different requests until we eventually get to the one request to `/submit`:
-![[request-2.png]]
+![Another HTTP request with a base64 encoded user agent](request-2.png)
 The user agent here contains base 64 encoded data, which can be decoded to give the flag: `FLAG[FAFEDCABCDEFABCF]`
