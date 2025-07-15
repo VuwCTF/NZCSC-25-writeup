@@ -1,6 +1,6 @@
 # C-14: Log Analysis
 > We've hidden a FLAG somewhere in the logs. Find out if you can. Good Luck - Red team
-> [[instructions.docx]]
+> [instructions.docx](instructions.docx)
 
 The document is exclusively made up of images. Decoding the base64 at the end of the file gives two seemingly real flags, but when submitted are incorrect.
 

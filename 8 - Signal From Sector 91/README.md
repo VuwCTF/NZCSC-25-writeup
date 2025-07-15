@@ -1,5 +1,5 @@
 # C-8: Signal From Sector 91
-> A fragmented transmission was intercepted from an old relay — its contents layered and disguised. From what little we can reconstruct, the key was first spoken in a rhythmic tongue once used over the air. It was then compressed into something tighter, more obscure, and finally converted into raw bytes. The message itself? Secured with a method older than most passwords, and buried under two coats of obfuscation. Your job: recover the key, unwrap the message, and reveal what was so carefully hidden. [[encoded_message.txt]]
+> A fragmented transmission was intercepted from an old relay — its contents layered and disguised. From what little we can reconstruct, the key was first spoken in a rhythmic tongue once used over the air. It was then compressed into something tighter, more obscure, and finally converted into raw bytes. The message itself? Secured with a method older than most passwords, and buried under two coats of obfuscation. Your job: recover the key, unwrap the message, and reveal what was so carefully hidden. [encoded_message.txt](encoded_message.txt)
 
 This text file contains two hex strings, `encoded_key` and `encoded_flag`. 
 We will first decode the key. 

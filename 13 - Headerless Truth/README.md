@@ -1,5 +1,5 @@
 # C-13: Headerless Truth
-> What appears broken may just be missing a small piece. Find what’s absent, and the hidden truth will come into focus. [[Secret.png]]
+> What appears broken may just be missing a small piece. Find what’s absent, and the hidden truth will come into focus. [Secret.png](Secret.png)
 
 The PNG is corrupted, and running `pngcheck` outputs:
 ```

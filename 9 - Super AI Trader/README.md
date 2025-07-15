@@ -1,7 +1,7 @@
 # C-9: Super AI Trader
 > Uncover a hidden gem in the Stonks Trading App by cleverly manipulating user input to reveal a secret on the stack.  
   Connect over TCP using netcat or a similar program to solve: `nc ctf.nzcsc.org.nz 61870`
-  [[pwn.c | View Source Code Here]]
+  [View Source Code Here](pwn.c)
   
 *Unfortunately due to the nature of this challenge we are unable to archive it.*
 

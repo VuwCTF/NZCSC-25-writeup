@@ -51,7 +51,7 @@ Using odd numbers of trials is convenient as it allows for a clear majority in e
 
 Using 13 trials meets this level of accuracy. (although this is definitely higher than required)
 
-We can now construct a script to calculate the bounds, such as the one in [[solve.py]].
+We can now construct a script to calculate the bounds, such as the one in [solve.py](solve.py).
 This (after roughly 5 minutes) gives us the flag: `FLAG[FE927CB38D65A47E]`
 
 ![A screenshot of the app successfully running, and giving the flag.](flag.png)

@@ -2,7 +2,7 @@
 >NZCSC is working on creating a note taking application.  
 The application is available as an API.  
 It is however a work in progress, some endpoints are complete while others are not.  
-The documentation for the current version of the API can be found [[noteAPI|here]].
+The documentation for the current version of the API can be found [here](noteAPI.md).
 
 *Unfortunately due to the nature of this challenge we are unable to archive it.*
 We are given an OpenAPI specification for a note API. The endpoints can all be accessed at `/challenge4/api.php`.

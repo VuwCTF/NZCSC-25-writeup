@@ -1,6 +1,6 @@
 # C-12: Operation Ghost Beacon
 > A defunct satellite has mysteriously resumed broadcasting, sending what appears to be encrypted PowerShell payloads to unknown destinations. One of these transmissions contains a fragmented signal—disguised as harmless code. Your mission: deobfuscate the transmission, reconstruct the payload, and extract the embedded flag before it disappears into the static.
-> [[transmission.pcap]]
+> [transmission.pcap](transmission.pcap)
 
 Opening the provided packet capture shows 25 HTTP requests, all of which return either `404 Not Found` or `501 Unsupported Method`. The first 15 are to `/page0.html` through `/page14.html`. The next 5 are POST requests to `/submit` with `username=user0&password=pass0` through to `username=user4&password=pass4`. Several various files are requested, followed by a suspicious request to `/secure_data/download.php?doc=aHR0cHMlM0ElMkYlMkZuemNzYy0yMDI1LnMzLmFwLXNvdXRoZWFzdC0yLmFtYXpvbmF3cy5jb20lMkZjdGYtZG9jLnppcA==`.
 

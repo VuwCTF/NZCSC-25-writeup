@@ -1,7 +1,7 @@
 # C-10: Secure Vault
 > You've intercepted a suspicious executable from a cyber criminal organization. Intelligence suggests it contains a secret treasure code. Your mission is to reverse engineer the binary and extract the hidden flag.  
 Connect over TCP using netcat or a similar program to solve: `nc ctf.nzcsc.org.nz 35627`  
-[[rev|Download Binary Here]]
+[Download Binary Here](rev)
 
 Decompiling this binary in Ghidra we can see there are a lot of `printf` and `puts` calls. 
 There is a hardcoded ciphertext decrypted using a function called `xor_decrypt`, and another decrypted using `custom_decode`, and also a `printf` statement which claims to print the flag using the value `__s2`.
