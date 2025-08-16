@@ -4,7 +4,7 @@
 
 Opening the provided packet capture shows 25 HTTP requests, all of which return either `404 Not Found` or `501 Unsupported Method`. The first 15 are to `/page0.html` through `/page14.html`. The next 5 are POST requests to `/submit` with `username=user0&password=pass0` through to `username=user4&password=pass4`. Several various files are requested, followed by a suspicious request to `/secure_data/download.php?doc=aHR0cHMlM0ElMkYlMkZuemNzYy0yMDI1LnMzLmFwLXNvdXRoZWFzdC0yLmFtYXpvbmF3cy5jb20lMkZjdGYtZG9jLnppcA==`.
 
-Decoding this b64 gives the link [https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/ctf-doc.zip](https://wayback-api.archive.org/web/20250714092411/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/ctf-doc.zip.
+Decoding this b64 gives the link [https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/ctf-doc.zip](https://wayback-api.archive.org/web/20250714092411/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/ctf-doc.zip).
 This is a password-protected zip archive containing `CTF.docx`.
 
 Now that we have found a host that isn't the `127.0.0.1`, we can try the other endpoints specified in the capture. Trying `/page0.html` gives a [seemingly meaningless site](https://wayback-api.archive.org/web/20250714093115/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/page0.html). This is similar to the pages for almost the other numbers, except for [page8.html](https://web.archive.org/web/20250714093233/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/page8.html). In the source of this page is a commented-out `img` tag to [c4126F.jpeg](https://web.archive.org/web/20250714093431/https://nzcsc-2025.s3.ap-southeast-2.amazonaws.com/c4126F.jpeg).
